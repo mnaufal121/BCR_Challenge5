@@ -1,0 +1,52 @@
+footer {
+	/* margin: auto; */
+	margin: 150px 126px 100px 173px;
+	display: flex;
+	flex-direction: row;
+	font-family: 'Helvetica';
+}
+
+.addresFooter {
+	font-style: normal;
+	font-weight: 300;
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.contentFooter {
+	margin-left: 86px;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.sosmedFooter {
+	margin-left: 86px;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.sosmedList {
+	display: inline-flex;
+}
+
+img {
+	margin-right: 16px;
+}
+
+.copyFooter {
+	margin-left: 86px;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.logoFooter {
+	width: 100px;
+	height: 34px;
+	background-color: #0D28A6;
+}
