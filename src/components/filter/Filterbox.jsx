@@ -10,8 +10,6 @@ const Filterbox = () => {
         event.preventDefault()
         const { data } = await axios('https://rent-cars-api.herokuapp.com/admin/car')
         setListCar(data)
-        console.log(data)
-        console.log(typeof(data[0].price))
     };
 
     return (

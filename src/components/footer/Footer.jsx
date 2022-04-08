@@ -18,11 +18,11 @@ const Footer = () => {
                 <div className={`${styles.sosmedFooter}`}>
                     <p>Connect with us</p>
                     <div className={`${styles.sosmedList}`}>
-                        <img src="img/icon_facebook.svg" alt="fb" />
-                        <img src="img/icon_instagram.svg" alt="ig" />
-                        <img src="img/icon_twitter.svg" alt="tr" />
-                        <img src="img/icon_mail.svg" alt="ma" />
-                        <img src="img/icon_twitch.svg" alt="th" />
+                        <img src="/img/icon_facebook.svg" alt="fb" />
+                        <img src="/img/icon_instagram.svg" alt="ig" />
+                        <img src="/img/icon_twitter.svg" alt="tr" />
+                        <img src="/img/icon_mail.svg" alt="ma" />
+                        <img src="/img/icon_twitch.svg" alt="th" />
                     </div>
                 </div>
                 <div className={`${styles.copyFooter}`}>

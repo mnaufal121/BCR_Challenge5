@@ -1,4 +1,5 @@
 import styles from './ListCar.module.css';
+import { Link } from 'react-router-dom';
 
 const ListCar = ({ listCar }) => {
 
@@ -31,7 +32,9 @@ const ListCar = ({ listCar }) => {
                                 <span>Tahun 2020</span>
                             </li>
                         </ul>
-                        <button className={`btn btn-success ${styles.btnDetail}`}>Pilih Mobil</button>
+                        <Link to={`/detail/${data.id}`}>
+                            <button className={`btn btn-success ${styles.btnDetail}`}>Pilih Mobil</button>
+                        </Link>
                     </div>
                 )
             })

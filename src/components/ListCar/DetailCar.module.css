@@ -1,0 +1,161 @@
+.detailSection {
+    display: flex;
+    column-gap: 32px;
+    margin: 0 auto;
+    width: 1047px;
+}
+
+
+/* Section Detail Card */
+
+.detailPacket {
+    display: flex;
+    flex-direction: column;
+}
+
+.detailCard {
+    width: 605px;
+    height: 618px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    font-family: 'Helvetica';
+    padding: 24px;
+}
+
+h6 {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+p {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    color: #8A8A8A;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 175%;
+    align-items: flex-start;
+    margin: 8px 0 16px 0;
+}
+
+.btnDetail {
+    width: 178px;
+    height: 36px;
+    padding: 8px 12px;
+    background: #5CB85F;
+    border-radius: 2px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    color: #FFFFFF;
+    border: none;
+    margin: 24px 0 0 427px;
+
+}
+
+/* section card Detail Price */
+
+.cardPrice {
+    width: 405px;
+    height: 435px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+}
+
+.imgFrame {
+    width: 405px;
+    height: 216px;
+    background: #FFFFFF;
+    border-radius: 8px 8px 0px 0px;
+    padding: 28px 68px;
+    justify-content: center;
+}
+
+.imgProduct {
+    width: 270px;
+    height: 160px;
+}
+
+.detailProduct {
+    padding: 0 24px;
+    width: 405px;
+    height: 219px;
+    border-radius: 0 0 8px 8px;
+}
+
+.productName {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.detail {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    margin: 0px;
+    width: 200px;
+    height: 14px;
+    column-gap: 16px;
+}
+
+.detailPoint {
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 14px;
+    list-style: none;
+    align-items: center;
+}
+
+.detailIcon {
+    width: 12px;
+    height: 12px;
+    margin-right: 4px;
+}
+
+span {
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 14px;
+}
+
+.calc {
+    display: flex;
+    justify-content: space-between;
+    margin: 49px 0 24px 0;
+}
+
+.tPrice {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 20px;
+    padding-left: 0;
+}
+
+.nPrice {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.btnPrice {
+    padding: 8px 12px;
+    background: #5CB85F;
+    border-radius: 2px;
+    border: none;
+    width: 358px;
+    height: 36px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+}
