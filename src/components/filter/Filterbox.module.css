@@ -64,10 +64,20 @@ select {
     background: #5cb85f;
     border-radius: 2px;
     color: #fff;
-    cursor: pointer;
+    font-family: "Helvetica";
     font-size: 14px;
     font-weight: 700;
     line-height: 20px;
     padding: 8px 12px;
     white-space: nowrap;
+    border: none;
+}
+
+.listCar {
+    margin: 0 auto;
+    grid-gap: 24px;
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 1047px;
 }
