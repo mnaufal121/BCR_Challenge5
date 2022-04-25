@@ -1,19 +1,9 @@
 import styles from './Filterbox.module.css';
-import axios from 'axios';
-import { useState } from 'react';
 import ListCar from '../ListCar/ListCar';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCar } from '../redux/action/carAction';
 
 const Filterbox = () => {
-    // const [listCar, setListCar] = useState([])
-
-    // const reqData = async (event) => {
-    //     event.preventDefault()
-    //     const { data } = await axios('https://rent-cars-api.herokuapp.com/admin/car')
-    //     setListCar(data)
-    // };
-
     const dispatch = useDispatch();
     const { carData } = useSelector((globalStore) => globalStore.carReducer);
 
