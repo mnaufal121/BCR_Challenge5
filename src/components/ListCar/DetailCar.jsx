@@ -1,23 +1,12 @@
 import { useParams } from 'react-router-dom';
-import axios from "axios";
-import { useEffect, useState } from "react";
 import styles from "./DetailCar.module.css";
+import { useSelector } from 'react-redux';
 
 const DetailCar = () => {
     const { idCar } = useParams();
+    const { carData } = useSelector((globalStore) => globalStore.carReducer);
 
-    const [dataDetailCar, setDataDetailCar] = useState({});
-
-    const getData = async () => {
-        const { data } = await axios(
-            `https://rent-cars-api.herokuapp.com/admin/car/${idCar}`
-        );
-        setDataDetailCar(data);
-    };
-
-    useEffect(() => {
-        getData();
-    });
+    const carDataId = carData.find((a) => a.id.toString() === idCar);
 
     return (
         <>
@@ -57,27 +46,27 @@ const DetailCar = () => {
                 </div>
                 <div className={styles.cardPrice}>
                     <div className={styles.imgFrame}>
-                        <img src={dataDetailCar.image} className={styles.imgProduct} alt="imgProduct" />
+                        <img src={carDataId?.image} className={styles.imgProduct} alt="imgProduct" />
                     </div>
                     <div className={styles.detailProduct}>
-                        <h6 className={styles.productName}>{dataDetailCar.name}</h6>
+                        <h6 className={styles.productName}>{carDataId?.name}</h6>
                         <ul className={styles.detail}>
                             <li className={styles.detailPoint}>
                                 <img className={styles.detailIcon} src="/img/fi_users.svg" alt="cap" />
-                                <span>4 orang</span>
+                                <span>{carDataId?.passenger}</span>
                             </li>
                             <li className={styles.detailPoint}>
                                 <img className={styles.detailIcon} src="/img/fi_settings.svg" alt="type" />
-                                <span>Manual</span>
+                                <span>{carDataId?.type}</span>
                             </li>
                             <li className={styles.detailPoint}>
                                 <img className={styles.detailIcon} src="/img/fi_calendar.svg" alt="time" />
-                                <span>Tahun 2020</span>
+                                <span>{carDataId?.year}</span>
                             </li>
                         </ul>
                         <div className={styles.calc}>
                             <p className={styles.tPrice}>Total</p>
-                            <p className={styles.nPrice}>Rp {dataDetailCar.price}</p>
+                            <p className={styles.nPrice}>Rp {carDataId?.price}</p>
                         </div>
                         <button className={`btn btn-success ${styles.btnPrice}`}>Lanjutkan Pembayaran</button>
                     </div>

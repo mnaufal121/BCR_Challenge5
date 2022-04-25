@@ -2,15 +2,20 @@ import styles from './Filterbox.module.css';
 import axios from 'axios';
 import { useState } from 'react';
 import ListCar from '../ListCar/ListCar';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchCar } from '../redux/action/carAction';
 
 const Filterbox = () => {
-    const [listCar, setListCar] = useState([])
+    // const [listCar, setListCar] = useState([])
 
-    const reqData = async (event) => {
-        event.preventDefault()
-        const { data } = await axios('https://rent-cars-api.herokuapp.com/admin/car')
-        setListCar(data)
-    };
+    // const reqData = async (event) => {
+    //     event.preventDefault()
+    //     const { data } = await axios('https://rent-cars-api.herokuapp.com/admin/car')
+    //     setListCar(data)
+    // };
+
+    const dispatch = useDispatch();
+    const { carData } = useSelector((globalStore) => globalStore.carReducer);
 
     return (
         <>
@@ -37,12 +42,12 @@ const Filterbox = () => {
                         <input type="number" name="capacity" id="capacity" placeholder="Jumlah Penumpang (optional)" />
                     </div>
                     <div className={`${styles.searchSection}`}>
-                        <button onClick={(event) => reqData(event)} type="submit" className={`btn btn-success ${styles.searchBtn}`}>Cari Mobil</button>
+                        <button onClick={(event) => dispatch(fetchCar())} type="submit" className={`btn btn-success ${styles.searchBtn}`}>Cari Mobil</button>
                     </div>
                 </form>
             </section>
             <div className={styles.listCar}>
-                {listCar.length > 0 && <ListCar listCar={listCar} />}
+                {carData.length > 0 && <ListCar carData={carData} />}
             </div>
         </>
     )

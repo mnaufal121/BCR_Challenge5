@@ -1,7 +1,10 @@
 import styles from './ListCar.module.css';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
-const ListCar = ({ listCar }) => {
+const ListCar = () => {
+
+    const {carData} = useSelector((globalStore) => globalStore.carReducer);
 
     const formatMoney = (money) => {
         return money.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')
@@ -9,7 +12,7 @@ const ListCar = ({ listCar }) => {
 
     return (
         <>
-            {listCar.map((data) => {
+            {carData.map((data) => {
                 return (
                     <div key={data.id} className={`${styles.cardCars}`}>
                         <div className={styles.imgFrame}>
@@ -21,15 +24,15 @@ const ListCar = ({ listCar }) => {
                         <ul className={`list-group ${styles.detailGroup}`}>
                             <li className={`list-group-item d-flex align-items-center ${styles.detail}`}>
                                 <img src="img/fi_users.svg" alt="cap" />
-                                <span>4 orang</span>
+                                <span>{data.passenger}</span>
                             </li>
                             <li className={`list-group-item d-flex align-items-center ${styles.detail}`}>
                                 <img src="img/fi_settings.svg" alt="type" />
-                                <span>Manual</span>
+                                <span>{data.type}</span>
                             </li>
                             <li className={`list-group-item d-flex align-items-center ${styles.detail}`}>
                                 <img src="img/fi_calendar.svg" alt="time" />
-                                <span>Tahun 2020</span>
+                                <span>{data.year}</span>
                             </li>
                         </ul>
                         <Link to={`/detail/${data.id}`}>

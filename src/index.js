@@ -3,12 +3,19 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import RouteApp from './Routes'
+import { Provider } from 'react-redux';
+import { globalStore, persistor } from './components/redux/store';
+import { PersistGate } from 'redux-persist/integration/react';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
-    <RouteApp />
+    <Provider store={globalStore}>
+      <PersistGate persistor={persistor}>
+        <RouteApp />
+      </PersistGate>
+    </Provider>
   </React.StrictMode>,
 );
 
